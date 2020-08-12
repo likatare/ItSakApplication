@@ -4743,23 +4743,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\toffa\\.nuget\\packages\\": {},
+    "C:\\Users\\Hultgren\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\toffa\\Documents\\It och säkerhet\\ITSakApp\\ITSakApp\\ITSakApp.csproj",
+      "projectUniqueName": "C:\\Users\\Hultgren\\Documents\\GitHub\\ItSakApplication\\ITSakApp\\ITSakApp.csproj",
       "projectName": "ITSakApp",
-      "projectPath": "C:\\Users\\toffa\\Documents\\It och säkerhet\\ITSakApp\\ITSakApp\\ITSakApp.csproj",
-      "packagesPath": "C:\\Users\\toffa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\toffa\\Documents\\It och säkerhet\\ITSakApp\\ITSakApp\\obj\\",
+      "projectPath": "C:\\Users\\Hultgren\\Documents\\GitHub\\ItSakApplication\\ITSakApp\\ITSakApp.csproj",
+      "packagesPath": "C:\\Users\\Hultgren\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hultgren\\Documents\\GitHub\\ItSakApplication\\ITSakApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\toffa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hultgren\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4772,8 +4772,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\toffa\\Documents\\It och säkerhet\\ITSakApp\\Repository\\Repository.csproj": {
-              "projectPath": "C:\\Users\\toffa\\Documents\\It och säkerhet\\ITSakApp\\Repository\\Repository.csproj"
+            "C:\\Users\\Hultgren\\Documents\\GitHub\\ItSakApplication\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\Hultgren\\Documents\\GitHub\\ItSakApplication\\Repository\\Repository.csproj"
             }
           }
         }
@@ -4801,7 +4801,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
