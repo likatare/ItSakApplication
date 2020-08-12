@@ -1,0 +1,214 @@
+﻿using Repository;
+using Repository.Models;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
+
+namespace ITSakApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("This is itsäk test app!");
+
+            
+
+            while (true)
+            {
+                bool exit = false;
+
+                int selection = ShowMenu();
+
+                switch (selection)
+                {
+                    case 1:
+                        CreateUser();
+                        break;
+                    case 2:
+                        DeleteUser();
+                        break;
+                    case 3:
+                        EditUser();
+                        break;
+                    case 4:
+                        TestLogin();
+                        break;
+                    case 5:
+                        CreateNote();
+                        break;
+                    case 6:
+                        ReadFile();
+                        break;
+                    default:exit = true;
+                        break;
+                }
+
+                if (exit)
+                {
+                    break;
+                }
+            }
+        }
+
+        private static void ReadFile()
+        {
+           // string text = System.IO.File.ReadAllText(@"C:\Users\toffa\Documents\It och säkerhet\Kalles kaviar.txt");
+           // System.Console.WriteLine("Contents of Kalles kaviar.txt = {0}", text);
+
+            const string dir = @"C:\Users\toffa\Documents\It och säkerhet";  // your folder here
+            var files = Directory.GetFiles(dir);
+            for (var i = 0; i < files.Length; i++)
+            {
+                Console.WriteLine($"{i}) {Path.GetFileName(files[i])}");
+            }
+
+            while (true)
+            {
+                Console.WriteLine("Enter the number of the file you would like to see or -1 to exit");
+                var input = Console.ReadLine();
+
+                if (int.TryParse(input, out var index) && index > -2 && index < files.Length)
+                {
+                    if (index == -1)
+                        return;
+
+                    string[] chosenFile = System.IO.File.ReadAllLines(files[index]);
+                    foreach (string file in chosenFile)
+                    {
+                        Console.WriteLine(file);
+                    }
+                   
+                }
+                else
+                    Console.WriteLine("Bad input. Repeat please.");
+            }
+            
+        }
+
+        private static void CreateUser()
+        {
+            Console.Clear();
+            Console.WriteLine("Create a user");
+
+            Console.Write("Enter username: ");
+            string username = Console.ReadLine();
+
+            Console.Write("Enter password: ");
+            string password = Console.ReadLine();
+
+            Console.Write("Enter description: ");
+            string description = Console.ReadLine();
+
+            UserRepository.CreateUser(username,password,description);
+        }
+
+        private static void DeleteUser()
+        {
+            Console.Clear();
+            Console.WriteLine("Delete User");
+
+            User userToDelete = SelectUser();
+
+            UserRepository.DeleteUserById(userToDelete.Id);
+
+            Console.Clear();
+
+        }
+
+        private static void EditUser()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Edit User");
+
+            User userToEdit = SelectUser();
+
+            Console.Write("Enter a description: ");
+            userToEdit.Description = Console.ReadLine();
+
+            UserRepository.EditUserById(userToEdit.Id, userToEdit);
+
+        }
+
+
+        private static void TestLogin()
+        {
+            Console.Clear();
+            Console.WriteLine("Lets test");
+
+            Console.Write("Enter username: ");
+            string username = Console.ReadLine();
+
+            Console.Write("Enter password: ");
+            string password = Console.ReadLine();
+
+
+            if (UserRepository.LoginTest(username, password))
+            {
+                Console.WriteLine("its a match");
+            }
+            else
+            {
+                Console.WriteLine("It doesn`t match");
+            }
+        }
+
+        private static void CreateNote()
+        {
+            Console.Clear();
+            Console.WriteLine("Lets note");
+            User userToNote = SelectUser();
+
+
+            Console.Write("Enter a note: ");
+            string notes = Console.ReadLine();
+
+            if (userToNote.Notes == null)
+            {
+                userToNote.Notes = new List<string>();
+            }
+
+            userToNote.Notes.Add(notes);
+
+            UserRepository.CreateNote(userToNote.Id, userToNote);
+        }
+
+        private static User SelectUser()
+        {
+            List<User> users = UserRepository.GetUsers();
+
+            Console.WriteLine("Id name - description");
+
+            for (int i = 0; i < users.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}:{users[i].UserName} {users[i].Description} ");
+            }
+
+            Console.Write("select a user: ");
+            string input = Console.ReadLine();
+            int selectedNumber = int.Parse(input);
+            return users[selectedNumber - 1];
+        }
+
+        private static int ShowMenu()
+        {
+            Console.WriteLine("Menu");
+            Console.WriteLine("1. Create User");
+            Console.WriteLine("2. Delete User");
+            Console.WriteLine("3. Edit User");
+            Console.WriteLine("4. Test Login");
+            Console.WriteLine("5. Create note");
+            Console.WriteLine("6. Read file");
+
+            Console.Write("Input selection: ");
+
+            string input = Console.ReadLine();
+             int.TryParse(input,out int selectedOption);
+            return selectedOption;
+
+        }
+    }
+}
