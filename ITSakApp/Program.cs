@@ -112,21 +112,47 @@ namespace ITSakApp
             Console.Clear();
             Console.WriteLine("Lets test");
 
-            Console.Write("Enter username: ");
-            string username = Console.ReadLine();
 
-            Console.Write("Enter password: ");
-            string password = Console.ReadLine();
-
-
-            if (UserRepository.LoginTest(username, password))
+            while (true)
             {
-                Console.WriteLine("its a match");
+
+                Console.Write("Enter username: ");
+                string username = Console.ReadLine();
+
+                Console.Write("Enter password: ");
+                string inputPassword = Console.ReadLine();
+
+                string hashedPassword = GetPassword(username);
+
+                if (hashedPassword.Length > 0)
+                {
+
+                    string[] splittedInput = hashedPassword.Split(':');
+                    string salt = splittedInput[1];
+
+                    string combinedPasswordSalt = $"{inputPassword}:{salt}";
+                    string hashedResult = CreateMd5(combinedPasswordSalt);
+
+                    if (hashedResult == splittedInput[0])
+                    {
+                        Console.WriteLine("its a match");
+                        Console.ReadLine();
+                        Console.Clear();
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("It doesn`t match");
+                    }
+                }
+
+                else
+                {
+                    Console.WriteLine("User doesn't exist");
+                }
             }
-            else
-            {
-                Console.WriteLine("It doesn`t match");
-            }
+
+
         }
 
         private static void CreateNote()
@@ -191,7 +217,7 @@ namespace ITSakApp
 
             string md5 = CreateMd5(saltedPassword);
 
-            return $"{md5}{salt}";
+            return $"{md5}:{salt}";
         }
 
         private static string CreateMd5(string input)
@@ -211,8 +237,27 @@ namespace ITSakApp
         public static string RandomString(int length)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string(Enumerable.Repeat(chars,length)
-                .Select(s=>s[random.Next(s.Length)]).ToArray());
+            return new string(Enumerable.Repeat(chars, length)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+
+        private static string GetPassword(string username)
+        {
+            List<User> users = UserRepository.GetUsers();
+
+            string password = "";
+            for (int i = 0; i < users.Count; i++)
+            {
+
+                if (username == users[i].UserName)
+                {
+                    password = users[i].Password;
+                }
+               
+            }
+
+            return password;
         }
 
         private static User SelectUser()

@@ -20,7 +20,6 @@ namespace Repository
 
             };
 
-
             var db = new Database();
             db.UserCollection.InsertOne(user);
         }
@@ -29,13 +28,14 @@ namespace Repository
         {
             Database db = new Database();
 
-            return db.GetUsers();
+            return db.UserCollection.Find(u => true).ToList();
         }
 
         public static void DeleteUserById(ObjectId id)
         {
             Database db = new Database();
-            db.DeleteUserById(id);
+            
+            db.UserCollection.DeleteOne(u => u.Id == id);
         }
 
         public static void EditUserById(ObjectId id, User user)
@@ -48,15 +48,21 @@ namespace Repository
         {
             Database db = new Database();
 
-            return db.UserCollection.Find(u => u.UserName == username && u.Password == password).ToList<User>().Any();
+            return db.UserCollection.Find(u => u.UserName == username && u.Password == password ).ToList<User>().Any();
         }
 
-        public static void CreateNote(ObjectId id,User user)
+        public static void CreateNote(ObjectId id, User user)
         {
             Database db = new Database();
 
             db.NotesById(id, user);
 
+        }
+
+        public static string GetPassword(string password)
+        {
+            Database db = new Database();
+            return db.UserCollection.Find(u => u.Password == password).ToString();
         }
     }
 }

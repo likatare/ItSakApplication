@@ -22,17 +22,6 @@ namespace Repository
             UserCollection = _database.GetCollection<User>(USERS_COLLECTION);
         }
 
-        public List<User> GetUsers()
-        {
-            var findResult = UserCollection.Find(u=> true);
-            return findResult.ToList();
-        }
-
-        public void DeleteUserById(ObjectId id)
-        {
-            UserCollection = _database.GetCollection<User>(USERS_COLLECTION);
-            UserCollection.DeleteOne(u => u.Id == id);
-        }
 
         public void EditUserById(ObjectId id, User user)
         {
