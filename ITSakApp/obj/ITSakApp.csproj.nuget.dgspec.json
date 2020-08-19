@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hultgren\\Documents\\GitHub\\ItSakApplication\\ITSakApp\\ITSakApp.csproj": {}
+    "C:\\Users\\toffa\\Documents\\It och säkerhet\\ItSakApplication\\ITSakApp\\ITSakApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hultgren\\Documents\\GitHub\\ItSakApplication\\ITSakApp\\ITSakApp.csproj": {
+    "C:\\Users\\toffa\\Documents\\It och säkerhet\\ItSakApplication\\ITSakApp\\ITSakApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hultgren\\Documents\\GitHub\\ItSakApplication\\ITSakApp\\ITSakApp.csproj",
+        "projectUniqueName": "C:\\Users\\toffa\\Documents\\It och säkerhet\\ItSakApplication\\ITSakApp\\ITSakApp.csproj",
         "projectName": "ITSakApp",
-        "projectPath": "C:\\Users\\Hultgren\\Documents\\GitHub\\ItSakApplication\\ITSakApp\\ITSakApp.csproj",
-        "packagesPath": "C:\\Users\\Hultgren\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hultgren\\Documents\\GitHub\\ItSakApplication\\ITSakApp\\obj\\",
+        "projectPath": "C:\\Users\\toffa\\Documents\\It och säkerhet\\ItSakApplication\\ITSakApp\\ITSakApp.csproj",
+        "packagesPath": "C:\\Users\\toffa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\toffa\\Documents\\It och säkerhet\\ItSakApplication\\ITSakApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hultgren\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\toffa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Hultgren\\Documents\\GitHub\\ItSakApplication\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\Hultgren\\Documents\\GitHub\\ItSakApplication\\Repository\\Repository.csproj"
+              "C:\\Users\\toffa\\Documents\\It och säkerhet\\ItSakApplication\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\toffa\\Documents\\It och säkerhet\\ItSakApplication\\Repository\\Repository.csproj"
               }
             }
           }
@@ -44,6 +44,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -63,20 +69,20 @@
         }
       }
     },
-    "C:\\Users\\Hultgren\\Documents\\GitHub\\ItSakApplication\\Repository\\Repository.csproj": {
+    "C:\\Users\\toffa\\Documents\\It och säkerhet\\ItSakApplication\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hultgren\\Documents\\GitHub\\ItSakApplication\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\toffa\\Documents\\It och säkerhet\\ItSakApplication\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\Hultgren\\Documents\\GitHub\\ItSakApplication\\Repository\\Repository.csproj",
-        "packagesPath": "C:\\Users\\Hultgren\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hultgren\\Documents\\GitHub\\ItSakApplication\\Repository\\obj\\",
+        "projectPath": "C:\\Users\\toffa\\Documents\\It och säkerhet\\ItSakApplication\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\toffa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\toffa\\Documents\\It och säkerhet\\ItSakApplication\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hultgren\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\toffa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

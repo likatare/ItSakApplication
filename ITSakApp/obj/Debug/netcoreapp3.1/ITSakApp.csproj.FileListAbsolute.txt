@@ -48,3 +48,29 @@ C:\Users\Hultgren\Documents\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreap
 C:\Users\Hultgren\Documents\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.dll
 C:\Users\Hultgren\Documents\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.pdb
 C:\Users\Hultgren\Documents\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.genruntimeconfig.cache
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\ITSakApp.exe
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\ITSakApp.deps.json
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\ITSakApp.runtimeconfig.json
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\ITSakApp.runtimeconfig.dev.json
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\ITSakApp.dll
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\ITSakApp.pdb
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\DnsClient.dll
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\MongoDB.Bson.dll
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\MongoDB.Driver.dll
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.dll
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\SharpCompress.dll
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\runtimes\win\native\libzstd.dll
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy32.dll
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy64.dll
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\Repository.dll
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\Repository.pdb
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.csprojAssemblyReference.cache
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.AssemblyInfoInputs.cache
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.AssemblyInfo.cs
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.csproj.CopyComplete
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.dll
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.pdb
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.genruntimeconfig.cache
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.csproj.CoreCompileInputs.cache

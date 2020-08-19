@@ -31,14 +31,14 @@ namespace Repository
             return db.UserCollection.Find(u => true).ToList();
         }
 
-        public static void DeleteUserById(ObjectId id)
+        public static void DeleteUserById(string id)
         {
             Database db = new Database();
             
             db.UserCollection.DeleteOne(u => u.Id == id);
         }
 
-        public static void EditUserById(ObjectId id, User user)
+        public static void EditUserById(string id, User user)
         {
             Database db = new Database();
             db.EditUserById(id, user);
@@ -51,7 +51,7 @@ namespace Repository
             return db.UserCollection.Find(u => u.UserName == username && u.Password == password ).ToList<User>().Any();
         }
 
-        public static void CreateNote(ObjectId id, User user)
+        public static void CreateNote(string id, User user)
         {
             Database db = new Database();
 
@@ -63,6 +63,20 @@ namespace Repository
         {
             Database db = new Database();
             return db.UserCollection.Find(u => u.Password == password).ToString();
+        }
+
+        public static void DeleteAllUsers()
+        {
+            Database db = new Database();
+
+            db.UserCollection.DeleteMany(u => true);
+        }
+
+        public static void SaveManyUsers(List<User> user)
+        {
+            Database db = new Database();
+
+            db.UserCollection.InsertMany(user);
         }
     }
 }

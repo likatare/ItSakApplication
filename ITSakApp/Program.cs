@@ -1,7 +1,9 @@
-﻿using Repository;
+﻿using Newtonsoft.Json;
+using Repository;
 using Repository.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -12,7 +14,7 @@ namespace ITSakApp
     class Program
     {
         private static readonly Random random = new Random();
-
+        const string BACKUP_FILE_PATH = @"C:\Users\toffa\Documents\It och säkerhet\Backup\";
         static void Main(string[] args)
         {
             Console.WriteLine("This is itsäk test app!");
@@ -45,6 +47,12 @@ namespace ITSakApp
                     case 6:
                         ReadFile();
                         break;
+                    case 7:
+                        CreateBackup();
+                        break;
+                    case 8:
+                        RestoreBackup();
+                        break;
                     default:
                         exit = true;
                         break;
@@ -57,7 +65,26 @@ namespace ITSakApp
             }
         }
 
+       
 
+      
+
+        private static void CreateBackup()
+        {
+            List<User> users = UserRepository.GetUsers();
+            string usersJson = JsonConvert.SerializeObject(users);
+
+            Console.Write("Enter name on backup: ");
+            string input = Console.ReadLine();
+
+            using (StreamWriter file =
+            new StreamWriter($"{BACKUP_FILE_PATH}{input}.json", false))
+            {
+                file.Write(usersJson);
+            }
+
+            Console.WriteLine("Backup created");
+        }
 
         private static void CreateUser()
         {
@@ -175,6 +202,8 @@ namespace ITSakApp
             UserRepository.CreateNote(userToNote.Id, userToNote);
         }
 
+
+
         private static void ReadFile()
         {
             // string text = System.IO.File.ReadAllText(@"C:\Users\toffa\Documents\It och säkerhet\Kalles kaviar.txt");
@@ -197,7 +226,7 @@ namespace ITSakApp
                     if (index == -1)
                         return;
 
-                    string[] chosenFile = System.IO.File.ReadAllLines(files[index]);
+                    string[] chosenFile = File.ReadAllLines(files[index]);
                     foreach (string file in chosenFile)
                     {
                         Console.WriteLine(file);
@@ -208,6 +237,41 @@ namespace ITSakApp
                     Console.WriteLine("Bad input. Repeat please.");
             }
 
+        }
+
+        private static void RestoreBackup()
+        {
+            string usersJson = "";
+
+             string dir = SelectFile();
+
+            using (var reader = new StreamReader(dir))
+            {
+                usersJson = reader.ReadToEnd();
+            }
+
+            var user = JsonConvert.DeserializeObject<List<User>>(usersJson);
+
+            UserRepository.DeleteAllUsers();
+            UserRepository.SaveManyUsers(user);
+        }
+
+        private static string SelectFile()
+        {
+            const string dir = @"C:\Users\toffa\Documents\It och säkerhet\backup";  // your folder here
+            var files = Directory.GetFiles(dir);
+
+            Console.WriteLine("Id name - description");
+
+            for (int i = 0; i < files.Length; i++)
+            {
+                Console.WriteLine($"{i+1}) {Path.GetFileName(files[i])}");
+            }
+
+            Console.Write("select a file: ");
+            string input = Console.ReadLine();
+            int selectedNumber = int.Parse(input);
+            return files[selectedNumber - 1];
         }
 
         static string HashPassword(string password)
@@ -286,6 +350,8 @@ namespace ITSakApp
             Console.WriteLine("4. Test Login");
             Console.WriteLine("5. Create note");
             Console.WriteLine("6. Read file");
+            Console.WriteLine("7. Create backup");
+            Console.WriteLine("8. Restore backup");
 
             Console.Write("Input selection: ");
 
