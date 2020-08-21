@@ -1,4 +1,5 @@
-﻿using Repository;
+﻿using Newtonsoft.Json;
+using Repository;
 using Repository.Models;
 using System;
 using System.Collections.Generic;
@@ -7,17 +8,18 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
+
 namespace ITSakApp
 {
     class Program
     {
         private static readonly Random random = new Random();
+        const string BACKUP_FILE_PATH = @"D:\Skolarbete\IT och Säkerhet\Backup\";
+        const string KEYS_SAVE_PATH = @"D:\Skolarbete\IT och Säkerhet\Keys\";
 
         static void Main(string[] args)
         {
             Console.WriteLine("This is itsäk test app!");
-
-
 
             while (true)
             {
@@ -45,6 +47,21 @@ namespace ITSakApp
                     case 6:
                         ReadFile();
                         break;
+                    case 7:
+                        CreateBackup();
+                        break;
+                    case 8:
+                        RestoreBackup();
+                        break;
+                    case 9:
+                        CreateKeys();
+                        break;
+                    case 10:
+                        EncryptMessage();
+                        break;
+                    case 11:
+                        DecryptMessage();
+                        break;
                     default:
                         exit = true;
                         break;
@@ -57,6 +74,76 @@ namespace ITSakApp
             }
         }
 
+        private static void DecryptMessage()
+        {
+            var enc = new Cryptography();
+
+
+            string inputText = "";
+
+            using (var reader = new StreamReader($"{KEYS_SAVE_PATH}messageToDecrypt.txt"))
+            {
+                string file = reader.ReadToEnd();
+                string[] splittedFile = file.Split('~');
+                string privateKey = splittedFile[0];
+                inputText = splittedFile[1];
+
+
+                enc.SetKey(privateKey);
+            }
+
+            string decryptedMessage = enc.Decrypt(inputText);
+            Console.WriteLine($"decrypted: {decryptedMessage}");
+            Console.ReadLine();
+        }
+
+        private static void EncryptMessage()
+        {
+
+            var enc = new Cryptography();
+
+
+            string inputText = "";
+
+            using (var reader = new StreamReader($"{KEYS_SAVE_PATH}messageToEncrypt.txt"))
+            {
+                string file = reader.ReadToEnd();
+                string[] splittedFile = file.Split('^');
+                string publicKey = splittedFile[0];
+                inputText = splittedFile[1];
+
+
+                enc.SetKey(publicKey);
+            }
+
+            string encryptedMessage = enc.Encrypt(inputText);
+            Console.WriteLine($"Encrypted: {encryptedMessage}");
+            Console.ReadLine();
+        }
+
+        private static void CreateKeys()
+        {
+            var enc = new Cryptography();
+            string publicKey = enc.GetPublicKey();
+            string privateKey = enc.GetPrivateKey();
+
+            using (StreamWriter file =
+                new StreamWriter($"{KEYS_SAVE_PATH}private.key", false))
+            {
+                file.Write(privateKey);
+            }
+
+            using (StreamWriter file =
+                new StreamWriter($"{KEYS_SAVE_PATH}public.key", false))
+            {
+                file.Write(publicKey);
+            }
+
+
+            Console.WriteLine("keys saved");
+            Console.ReadLine();
+            Console.Clear();
+        }
 
 
         private static void CreateUser()
@@ -88,7 +175,6 @@ namespace ITSakApp
             UserRepository.DeleteUserById(userToDelete.Id);
 
             Console.Clear();
-
         }
 
         private static void EditUser()
@@ -103,7 +189,6 @@ namespace ITSakApp
             userToEdit.Description = Console.ReadLine();
 
             UserRepository.EditUserById(userToEdit.Id, userToEdit);
-
         }
 
 
@@ -112,10 +197,8 @@ namespace ITSakApp
             Console.Clear();
             Console.WriteLine("Lets test");
 
-
             while (true)
             {
-
                 Console.Write("Enter username: ");
                 string username = Console.ReadLine();
 
@@ -126,7 +209,6 @@ namespace ITSakApp
 
                 if (hashedPassword.Length > 0)
                 {
-
                     string[] splittedInput = hashedPassword.Split(':');
                     string salt = splittedInput[1];
 
@@ -151,8 +233,6 @@ namespace ITSakApp
                     Console.WriteLine("User doesn't exist");
                 }
             }
-
-
         }
 
         private static void CreateNote()
@@ -180,8 +260,8 @@ namespace ITSakApp
             // string text = System.IO.File.ReadAllText(@"C:\Users\toffa\Documents\It och säkerhet\Kalles kaviar.txt");
             // System.Console.WriteLine("Contents of Kalles kaviar.txt = {0}", text);
 
-            const string dir = @"C:\Users\toffa\Documents\It och säkerhet";  // your folder here
-            var files = Directory.GetFiles(dir);
+              // your folder here
+            var files = Directory.GetFiles(BACKUP_FILE_PATH);
             for (var i = 0; i < files.Length; i++)
             {
                 Console.WriteLine($"{i}) {Path.GetFileName(files[i])}");
@@ -210,6 +290,58 @@ namespace ITSakApp
 
         }
 
+        private static void CreateBackup()
+        {
+            List<User> users = UserRepository.GetUsers();
+            string usersJson = JsonConvert.SerializeObject(users);
+
+            Console.Write("Enter name on backup: ");
+            string input = Console.ReadLine();
+
+            using (StreamWriter file =
+            new StreamWriter($"{BACKUP_FILE_PATH}{input}.json", false))
+            {
+                file.Write(usersJson);
+            }
+
+            Console.WriteLine("Backup created");
+        }
+
+        private static void RestoreBackup()
+        {
+            string usersJson = "";
+
+            string dir = SelectFile();
+
+            using (var reader = new StreamReader(dir))
+            {
+                usersJson = reader.ReadToEnd();
+            }
+
+            var user = JsonConvert.DeserializeObject<List<User>>(usersJson);
+
+            UserRepository.DeleteAllUsers();
+            UserRepository.SaveManyUsers(user);
+        }
+
+        private static string SelectFile()
+        {
+           
+            var files = Directory.GetFiles(BACKUP_FILE_PATH);
+
+            Console.WriteLine("Id name - description");
+
+            for (int i = 0; i < files.Length; i++)
+            {
+                Console.WriteLine($"{i + 1}) {Path.GetFileName(files[i])}");
+            }
+
+            Console.Write("select a file: ");
+            string input = Console.ReadLine();
+            int selectedNumber = int.Parse(input);
+            return files[selectedNumber - 1];
+        }
+
         static string HashPassword(string password)
         {
             string salt = RandomString(25);
@@ -222,8 +354,8 @@ namespace ITSakApp
 
         private static string CreateMd5(string input)
         {
-            MD5 mD5 = System.Security.Cryptography.MD5.Create();
-            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+            MD5 mD5 = MD5.Create();
+            byte[] inputBytes = Encoding.ASCII.GetBytes(input);
             byte[] hashBytes = mD5.ComputeHash(inputBytes);
 
             StringBuilder sb = new StringBuilder();
@@ -286,6 +418,11 @@ namespace ITSakApp
             Console.WriteLine("4. Test Login");
             Console.WriteLine("5. Create note");
             Console.WriteLine("6. Read file");
+            Console.WriteLine("7. Create backup");
+            Console.WriteLine("8. Restore backup");
+            Console.WriteLine("9. Create keys");
+            Console.WriteLine("10. Encrypt message");
+            Console.WriteLine("11. Decrypt message");
 
             Console.Write("Input selection: ");
 

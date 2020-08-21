@@ -41,10 +41,11 @@ C:\Users\Hultgren\Documents\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreap
 C:\Users\Hultgren\Documents\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\Repository.dll
 C:\Users\Hultgren\Documents\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\Repository.pdb
 C:\Users\Hultgren\Documents\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.csprojAssemblyReference.cache
-C:\Users\Hultgren\Documents\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.csproj.CoreCompileInputs.cache
 C:\Users\Hultgren\Documents\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.AssemblyInfoInputs.cache
 C:\Users\Hultgren\Documents\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.AssemblyInfo.cs
 C:\Users\Hultgren\Documents\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.csproj.CopyComplete
 C:\Users\Hultgren\Documents\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.dll
 C:\Users\Hultgren\Documents\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.pdb
 C:\Users\Hultgren\Documents\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.genruntimeconfig.cache
+C:\Users\Hultgren\Documents\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Hultgren\Documents\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.csproj.CoreCompileInputs.cache

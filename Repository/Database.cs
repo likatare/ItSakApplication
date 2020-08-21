@@ -23,7 +23,7 @@ namespace Repository
         }
 
 
-        public void EditUserById(ObjectId id, User user)
+        public void EditUserById(string id, User user)
         {
             UserCollection = _database.GetCollection<User>(USERS_COLLECTION);
 
@@ -33,7 +33,7 @@ namespace Repository
             UserCollection.UpdateOne(u => u.Id == id, update);
         }
 
-        internal void NotesById(ObjectId id, User user)
+        internal void NotesById(string id, User user)
         {
             UserCollection = _database.GetCollection<User>(USERS_COLLECTION);
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+fj8/DN/j8noUQMvJrJ3oHEa3LLfw9OzW6x+uAC1Zay+x4K0ERsyqFCe8xocIpSi4TzGJUKci5IYQQ5ym3C43g==",
+  "dgSpecHash": "6XVJ3rFVaOX2lkrD3BFYCTBmE+3+7vJCSBqtG42ou75ET9/F5IlEEkgvGSaOxOqGcZWWY2mKaSqVrhk3shHOqA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Hultgren\\Documents\\GitHub\\ItSakApplication\\ITSakApp\\ITSakApp.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\Hultgren\\.nuget\\packages\\mongodb.driver.core\\2.11.0\\mongodb.driver.core.2.11.0.nupkg.sha512",
     "C:\\Users\\Hultgren\\.nuget\\packages\\mongodb.libmongocrypt\\1.0.0\\mongodb.libmongocrypt.1.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
+    "C:\\Users\\Hultgren\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
