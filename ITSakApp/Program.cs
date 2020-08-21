@@ -3,23 +3,24 @@ using Repository;
 using Repository.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-
 
 namespace ITSakApp
 {
     class Program
     {
         private static readonly Random random = new Random();
-        const string BACKUP_FILE_PATH = @"D:\Skolarbete\IT och Säkerhet\Backup\";
-        const string KEYS_SAVE_PATH = @"D:\Skolarbete\IT och Säkerhet\Keys\";
-
+        const string BACKUP_FILE_PATH = @"C:\Users\toffa\Documents\It och säkerhet\Backup\";
+        const string KEYS_SAVE_PATH = @"C:\Users\toffa\Documents\It och säkerhet\ITSakAppKeys\";
         static void Main(string[] args)
         {
             Console.WriteLine("This is itsäk test app!");
+
+
 
             while (true)
             {
@@ -102,7 +103,7 @@ namespace ITSakApp
 
             var enc = new Cryptography();
 
-
+            
             string inputText = "";
 
             using (var reader = new StreamReader($"{KEYS_SAVE_PATH}messageToEncrypt.txt"))
@@ -142,9 +143,7 @@ namespace ITSakApp
 
             Console.WriteLine("keys saved");
             Console.ReadLine();
-            Console.Clear();
         }
-
 
         private static void CreateUser()
         {
@@ -175,6 +174,7 @@ namespace ITSakApp
             UserRepository.DeleteUserById(userToDelete.Id);
 
             Console.Clear();
+
         }
 
         private static void EditUser()
@@ -189,6 +189,7 @@ namespace ITSakApp
             userToEdit.Description = Console.ReadLine();
 
             UserRepository.EditUserById(userToEdit.Id, userToEdit);
+
         }
 
 
@@ -197,18 +198,21 @@ namespace ITSakApp
             Console.Clear();
             Console.WriteLine("Lets test");
 
+
             while (true)
             {
+
                 Console.Write("Enter username: ");
                 string username = Console.ReadLine();
 
                 Console.Write("Enter password: ");
                 string inputPassword = Console.ReadLine();
 
-                string hashedPassword = GetPassword(username);
+                string hashedPassword = GetUserByUsername(username);
 
                 if (hashedPassword.Length > 0)
                 {
+
                     string[] splittedInput = hashedPassword.Split(':');
                     string salt = splittedInput[1];
 
@@ -233,6 +237,8 @@ namespace ITSakApp
                     Console.WriteLine("User doesn't exist");
                 }
             }
+
+
         }
 
         private static void CreateNote()
@@ -255,13 +261,12 @@ namespace ITSakApp
             UserRepository.CreateNote(userToNote.Id, userToNote);
         }
 
+
+
         private static void ReadFile()
         {
-            // string text = System.IO.File.ReadAllText(@"C:\Users\toffa\Documents\It och säkerhet\Kalles kaviar.txt");
-            // System.Console.WriteLine("Contents of Kalles kaviar.txt = {0}", text);
-
-              // your folder here
-            var files = Directory.GetFiles(BACKUP_FILE_PATH);
+            const string dir = @"C:\Users\toffa\Documents\It och säkerhet";  // your folder here
+            var files = Directory.GetFiles(dir);
             for (var i = 0; i < files.Length; i++)
             {
                 Console.WriteLine($"{i}) {Path.GetFileName(files[i])}");
@@ -277,7 +282,7 @@ namespace ITSakApp
                     if (index == -1)
                         return;
 
-                    string[] chosenFile = System.IO.File.ReadAllLines(files[index]);
+                    string[] chosenFile = File.ReadAllLines(files[index]);
                     foreach (string file in chosenFile)
                     {
                         Console.WriteLine(file);
@@ -326,8 +331,8 @@ namespace ITSakApp
 
         private static string SelectFile()
         {
-           
-            var files = Directory.GetFiles(BACKUP_FILE_PATH);
+            const string dir = @"C:\Users\toffa\Documents\It och säkerhet\backup";  // your folder here
+            var files = Directory.GetFiles(dir);
 
             Console.WriteLine("Id name - description");
 
@@ -355,7 +360,7 @@ namespace ITSakApp
         private static string CreateMd5(string input)
         {
             MD5 mD5 = MD5.Create();
-            byte[] inputBytes = Encoding.ASCII.GetBytes(input);
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
             byte[] hashBytes = mD5.ComputeHash(inputBytes);
 
             StringBuilder sb = new StringBuilder();
@@ -374,20 +379,21 @@ namespace ITSakApp
         }
 
 
-        private static string GetPassword(string username)
+
+        private static string GetUserByUsername(string username)
         {
-            List<User> users = UserRepository.GetUsers();
+
+
+            User user = UserRepository.GetUserByUsername(username);
 
             string password = "";
-            for (int i = 0; i < users.Count; i++)
-            {
 
-                if (username == users[i].UserName)
-                {
-                    password = users[i].Password;
-                }
-               
+            if (user != null)
+            {
+                password = user.Password;
+
             }
+
 
             return password;
         }

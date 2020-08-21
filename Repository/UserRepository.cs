@@ -21,11 +21,8 @@ namespace Repository
             };
 
             var db = new Database();
-
             db.UserCollection.InsertOne(user);
         }
-
-        
 
         public static List<User> GetUsers()
         {
@@ -39,13 +36,6 @@ namespace Repository
             Database db = new Database();
             
             db.UserCollection.DeleteOne(u => u.Id == id);
-        }
-
-        public static User GetUserById(string userId)
-        {
-            Database db = new Database();
-
-            return db.UserCollection.Find(u=> u.Id == userId).FirstOrDefault();
         }
 
         public static void EditUserById(string id, User user)
@@ -89,9 +79,10 @@ namespace Repository
             db.UserCollection.InsertMany(user);
         }
 
-        public static User GetUserByUsename(string username)
+        public static User GetUserByUsername(string username)
         {
             Database db = new Database();
+
             return db.UserCollection.Find(u => u.UserName == username).FirstOrDefault();
         }
     }
