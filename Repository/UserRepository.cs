@@ -78,5 +78,12 @@ namespace Repository
 
             db.UserCollection.InsertMany(user);
         }
+
+        public static User GetUserByUsername(string username)
+        {
+            Database db = new Database();
+
+            return db.UserCollection.Find(u => u.UserName == username).FirstOrDefault();
+        }
     }
 }
