@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LibraryITSak;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Repository;
@@ -42,8 +43,17 @@ namespace ITSakMVC.Controllers
         {
             try
             {
-                
+                var hashPassword = ITSakLibraryApp.HashPassword(user.Password);
 
+                if (UserRepository.GetUserByUsername(user.UserName) == null)
+                {
+                    UserRepository.CreateUser(user.UserName,hashPassword,user.Description);
+                }
+                else
+                {
+                    ViewBag.Errormessage = "Username already exists";
+                    return View(user);
+                }
 
                 return RedirectToAction(nameof(Index));
             }
@@ -54,18 +64,22 @@ namespace ITSakMVC.Controllers
         }
 
         // GET: UsersController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
-            return View();
+            User user = UserRepository.GetUserById(id);
+
+            return View(user);
         }
 
         // POST: UsersController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(string id,User user)
         {
             try
             {
+                UserRepository.EditUserById(id,user);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -75,18 +89,23 @@ namespace ITSakMVC.Controllers
         }
 
         // GET: UsersController/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
-            return View();
+            User user = UserRepository.GetUserById(id);
+
+
+            return View(user);
         }
 
         // POST: UsersController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(string id, IFormCollection collection)
         {
             try
             {
+                UserRepository.DeleteUserById(id);
+
                 return RedirectToAction(nameof(Index));
             }
             catch

@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Security.Cryptography;
 
-namespace ITSakApp
+namespace LibraryITSak
 {
-    class Cryptography
+    public class Cryptography
     {
-        private RSACryptoServiceProvider csp { get; set; }
+        private RSACryptoServiceProvider Csp { get; set; }
 
         public Cryptography()
         {
             //lets take a new CSP with a new 2048 bit rsa key pair
-            csp = new RSACryptoServiceProvider(2048);
+            Csp = new RSACryptoServiceProvider(2048);
         }
 
         // Returns the public key as a string
         public string GetPublicKey()
         {
-            RSAParameters pubKey = csp.ExportParameters(false);
+            RSAParameters pubKey = Csp.ExportParameters(false);
 
             string publicKeyString = GetStringFromRSAParameters(pubKey);
 
@@ -26,7 +26,7 @@ namespace ITSakApp
         // Returns the private key as a string
         public string GetPrivateKey()
         {
-            RSAParameters privKey = csp.ExportParameters(true);
+            RSAParameters privKey = Csp.ExportParameters(true);
 
             string privateKeyString = GetStringFromRSAParameters(privKey);
 
@@ -59,7 +59,7 @@ namespace ITSakApp
             byte[] bytesPlainTextData = System.Text.Encoding.Unicode.GetBytes(plainTextData);
 
             //apply pkcs#1.5 padding and encrypt our data 
-            byte[] bytesCypherText = csp.Encrypt(bytesPlainTextData, false);
+            byte[] bytesCypherText = Csp.Encrypt(bytesPlainTextData, false);
 
             //we might want a string representation of our cypher text... base64 will do
             string cypherText = Convert.ToBase64String(bytesCypherText);
@@ -74,7 +74,7 @@ namespace ITSakApp
             byte[] bytesCypherText = Convert.FromBase64String(cypherText);
 
             //decrypt and strip pkcs#1.5 padding
-            byte[] bytesPlainTextData = csp.Decrypt(bytesCypherText, false);
+            byte[] bytesPlainTextData = Csp.Decrypt(bytesCypherText, false);
 
             //get our original plainText back...
             string plainTextData = System.Text.Encoding.Unicode.GetString(bytesPlainTextData);
@@ -102,7 +102,7 @@ namespace ITSakApp
         public void SetKey(string keyString)
         {
             RSAParameters key = GetRSAParametersFromString(keyString);
-            csp.ImportParameters(key);
+            Csp.ImportParameters(key);
         }
     }
 }

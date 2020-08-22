@@ -122,3 +122,7 @@ D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\obj\Debug\netcoreapp3.1\ITSakMVC.
 D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\obj\Debug\netcoreapp3.1\Razor\Views\Users\Index.cshtml.g.cs
 D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\obj\Debug\netcoreapp3.1\Razor\Views\Users\Details.cshtml.g.cs
 D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\obj\Debug\netcoreapp3.1\Razor\Views\Users\Create.cshtml.g.cs
+D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\bin\Debug\netcoreapp3.1\LibraryITSak.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\bin\Debug\netcoreapp3.1\LibraryITSak.pdb
+D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\obj\Debug\netcoreapp3.1\Razor\Views\Users\Edit.cshtml.g.cs
+D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\obj\Debug\netcoreapp3.1\Razor\Views\Users\Delete.cshtml.g.cs

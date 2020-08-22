@@ -20,7 +20,6 @@ namespace Repository.Models
         public string Description { get; set; }
         public List<string> Notes { get; set; }
 
-        public string ErrorMessage { get; set; }
 
     }
 }

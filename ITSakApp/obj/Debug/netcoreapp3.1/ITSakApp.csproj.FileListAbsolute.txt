@@ -100,3 +100,5 @@ D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.
 D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.dll
 D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.pdb
 D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.genruntimeconfig.cache
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\LibraryITSak.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\LibraryITSak.pdb

@@ -1,0 +1,12 @@
+D:\Skolarbete\GitHub\ItSakApplication\LibraryITSak\bin\Debug\netcoreapp3.1\LibraryITSak.deps.json
+D:\Skolarbete\GitHub\ItSakApplication\LibraryITSak\bin\Debug\netcoreapp3.1\LibraryITSak.dll
+D:\Skolarbete\GitHub\ItSakApplication\LibraryITSak\bin\Debug\netcoreapp3.1\Repository.dll
+D:\Skolarbete\GitHub\ItSakApplication\LibraryITSak\bin\Debug\netcoreapp3.1\Repository.pdb
+D:\Skolarbete\GitHub\ItSakApplication\LibraryITSak\obj\Debug\netcoreapp3.1\LibraryITSak.csprojAssemblyReference.cache
+D:\Skolarbete\GitHub\ItSakApplication\LibraryITSak\obj\Debug\netcoreapp3.1\LibraryITSak.AssemblyInfoInputs.cache
+D:\Skolarbete\GitHub\ItSakApplication\LibraryITSak\obj\Debug\netcoreapp3.1\LibraryITSak.AssemblyInfo.cs
+D:\Skolarbete\GitHub\ItSakApplication\LibraryITSak\obj\Debug\netcoreapp3.1\LibraryITSak.csproj.CopyComplete
+D:\Skolarbete\GitHub\ItSakApplication\LibraryITSak\bin\Debug\netcoreapp3.1\LibraryITSak.pdb
+D:\Skolarbete\GitHub\ItSakApplication\LibraryITSak\obj\Debug\netcoreapp3.1\LibraryITSak.csproj.CoreCompileInputs.cache
+D:\Skolarbete\GitHub\ItSakApplication\LibraryITSak\obj\Debug\netcoreapp3.1\LibraryITSak.dll
+D:\Skolarbete\GitHub\ItSakApplication\LibraryITSak\obj\Debug\netcoreapp3.1\LibraryITSak.pdb

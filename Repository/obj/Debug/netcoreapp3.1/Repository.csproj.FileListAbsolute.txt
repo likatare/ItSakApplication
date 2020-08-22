@@ -32,3 +32,4 @@ D:\Skolarbete\GitHub\ItSakApplication\Repository\obj\Debug\netcoreapp3.1\Reposit
 D:\Skolarbete\GitHub\ItSakApplication\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CoreCompileInputs.cache
 D:\Skolarbete\GitHub\ItSakApplication\Repository\obj\Debug\netcoreapp3.1\Repository.dll
 D:\Skolarbete\GitHub\ItSakApplication\Repository\obj\Debug\netcoreapp3.1\Repository.pdb
+D:\Skolarbete\GitHub\ItSakApplication\Repository\obj\Debug\netcoreapp3.1\Repository.csprojAssemblyReference.cache
