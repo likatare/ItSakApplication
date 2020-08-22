@@ -24,3 +24,11 @@ C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\Repository\obj\Debug\
 C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CoreCompileInputs.cache
 C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\Repository\obj\Debug\netcoreapp3.1\Repository.dll
 C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\Repository\obj\Debug\netcoreapp3.1\Repository.pdb
+D:\Skolarbete\GitHub\ItSakApplication\Repository\bin\Debug\netcoreapp3.1\Repository.deps.json
+D:\Skolarbete\GitHub\ItSakApplication\Repository\bin\Debug\netcoreapp3.1\Repository.dll
+D:\Skolarbete\GitHub\ItSakApplication\Repository\bin\Debug\netcoreapp3.1\Repository.pdb
+D:\Skolarbete\GitHub\ItSakApplication\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfoInputs.cache
+D:\Skolarbete\GitHub\ItSakApplication\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfo.cs
+D:\Skolarbete\GitHub\ItSakApplication\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CoreCompileInputs.cache
+D:\Skolarbete\GitHub\ItSakApplication\Repository\obj\Debug\netcoreapp3.1\Repository.dll
+D:\Skolarbete\GitHub\ItSakApplication\Repository\obj\Debug\netcoreapp3.1\Repository.pdb

@@ -44,6 +44,13 @@ namespace Repository
             db.EditUserById(id, user);
         }
 
+        public static User GetUserById(string userId)
+        {
+            Database db = new Database();
+
+            return db.UserCollection.Find(u => u.Id == userId).FirstOrDefault();
+        }
+
         public static bool LoginTest(string username, string password)
         {
             Database db = new Database();
@@ -85,5 +92,7 @@ namespace Repository
 
             return db.UserCollection.Find(u => u.UserName == username).FirstOrDefault();
         }
+
+
     }
 }

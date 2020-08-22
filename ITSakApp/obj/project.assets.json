@@ -4784,23 +4784,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\toffa\\.nuget\\packages\\": {},
+    "C:\\Users\\Hultgren\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\toffa\\Documents\\It och säkerhet\\ItSakApplication\\ITSakApp\\ITSakApp.csproj",
+      "projectUniqueName": "D:\\Skolarbete\\GitHub\\ItSakApplication\\ITSakApp\\ITSakApp.csproj",
       "projectName": "ITSakApp",
-      "projectPath": "C:\\Users\\toffa\\Documents\\It och säkerhet\\ItSakApplication\\ITSakApp\\ITSakApp.csproj",
-      "packagesPath": "C:\\Users\\toffa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\toffa\\Documents\\It och säkerhet\\ItSakApplication\\ITSakApp\\obj\\",
+      "projectPath": "D:\\Skolarbete\\GitHub\\ItSakApplication\\ITSakApp\\ITSakApp.csproj",
+      "packagesPath": "C:\\Users\\Hultgren\\.nuget\\packages\\",
+      "outputPath": "D:\\Skolarbete\\GitHub\\ItSakApplication\\ITSakApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\toffa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hultgren\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4813,8 +4813,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\toffa\\Documents\\It och säkerhet\\ItSakApplication\\Repository\\Repository.csproj": {
-              "projectPath": "C:\\Users\\toffa\\Documents\\It och säkerhet\\ItSakApplication\\Repository\\Repository.csproj"
+            "D:\\Skolarbete\\GitHub\\ItSakApplication\\Repository\\Repository.csproj": {
+              "projectPath": "D:\\Skolarbete\\GitHub\\ItSakApplication\\Repository\\Repository.csproj"
             }
           }
         }

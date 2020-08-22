@@ -54,7 +54,7 @@ namespace ItSakWebApplication.Controllers
 
 
 
-                if (UserRepository.GetUserByUsename(user.UserName) == null)
+                if (UserRepository.GetUserByUsername(user.UserName) == null)
                 {
 
                     UserRepository.CreateUser(user.UserName, hashedPassword, user.Description);
@@ -119,7 +119,7 @@ namespace ItSakWebApplication.Controllers
 
         private static string GetUserPasswordByUsername(string username)
         {
-            User user = UserRepository.GetUserByUsename(username);
+            User user = UserRepository.GetUserByUsername(username);
 
             string password = "";
 

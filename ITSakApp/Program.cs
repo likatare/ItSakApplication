@@ -75,76 +75,6 @@ namespace ITSakApp
             }
         }
 
-        private static void DecryptMessage()
-        {
-            var enc = new Cryptography();
-
-
-            string inputText = "";
-
-            using (var reader = new StreamReader($"{KEYS_SAVE_PATH}messageToDecrypt.txt"))
-            {
-                string file = reader.ReadToEnd();
-                string[] splittedFile = file.Split('~');
-                string privateKey = splittedFile[0];
-                inputText = splittedFile[1];
-
-
-                enc.SetKey(privateKey);
-            }
-
-            string decryptedMessage = enc.Decrypt(inputText);
-            Console.WriteLine($"decrypted: {decryptedMessage}");
-            Console.ReadLine();
-        }
-
-        private static void EncryptMessage()
-        {
-
-            var enc = new Cryptography();
-
-            
-            string inputText = "";
-
-            using (var reader = new StreamReader($"{KEYS_SAVE_PATH}messageToEncrypt.txt"))
-            {
-                string file = reader.ReadToEnd();
-                string[] splittedFile = file.Split('^');
-                string publicKey = splittedFile[0];
-                inputText = splittedFile[1];
-
-
-                enc.SetKey(publicKey);
-            }
-
-            string encryptedMessage = enc.Encrypt(inputText);
-            Console.WriteLine($"Encrypted: {encryptedMessage}");
-            Console.ReadLine();
-        }
-
-        private static void CreateKeys()
-        {
-            var enc = new Cryptography();
-            string publicKey = enc.GetPublicKey();
-            string privateKey = enc.GetPrivateKey();
-
-            using (StreamWriter file =
-                new StreamWriter($"{KEYS_SAVE_PATH}private.key", false))
-            {
-                file.Write(privateKey);
-            }
-
-            using (StreamWriter file =
-                new StreamWriter($"{KEYS_SAVE_PATH}public.key", false))
-            {
-                file.Write(publicKey);
-            }
-
-
-            Console.WriteLine("keys saved");
-            Console.ReadLine();
-        }
-
         private static void CreateUser()
         {
             Console.Clear();
@@ -327,6 +257,76 @@ namespace ITSakApp
 
             UserRepository.DeleteAllUsers();
             UserRepository.SaveManyUsers(user);
+        }
+
+        private static void CreateKeys()
+        {
+            var enc = new Cryptography();
+            string publicKey = enc.GetPublicKey();
+            string privateKey = enc.GetPrivateKey();
+
+            using (StreamWriter file =
+                new StreamWriter($"{KEYS_SAVE_PATH}private.key", false))
+            {
+                file.Write(privateKey);
+            }
+
+            using (StreamWriter file =
+                new StreamWriter($"{KEYS_SAVE_PATH}public.key", false))
+            {
+                file.Write(publicKey);
+            }
+
+
+            Console.WriteLine("keys saved");
+            Console.ReadLine();
+        }
+
+        private static void EncryptMessage()
+        {
+
+            var enc = new Cryptography();
+
+
+            string inputText = "";
+
+            using (var reader = new StreamReader($"{KEYS_SAVE_PATH}messageToEncrypt.txt"))
+            {
+                string file = reader.ReadToEnd();
+                string[] splittedFile = file.Split('^');
+                string publicKey = splittedFile[0];
+                inputText = splittedFile[1];
+
+
+                enc.SetKey(publicKey);
+            }
+
+            string encryptedMessage = enc.Encrypt(inputText);
+            Console.WriteLine($"Encrypted: {encryptedMessage}");
+            Console.ReadLine();
+        }
+
+        private static void DecryptMessage()
+        {
+            var enc = new Cryptography();
+
+
+            string inputText = "";
+
+            using (var reader = new StreamReader($"{KEYS_SAVE_PATH}messageToDecrypt.txt"))
+            {
+                string file = reader.ReadToEnd();
+                string[] splittedFile = file.Split('~');
+                string privateKey = splittedFile[0];
+                inputText = splittedFile[1];
+
+
+                enc.SetKey(privateKey);
+            }
+
+            string decryptedMessage = enc.Decrypt(inputText);
+            Console.WriteLine($"decrypted: {decryptedMessage}");
+            Console.ReadLine();
         }
 
         private static string SelectFile()

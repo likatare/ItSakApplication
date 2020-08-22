@@ -74,3 +74,29 @@ C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\obj\Debug\ne
 C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.genruntimeconfig.cache
 C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\toffa\Documents\It och säkerhet\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.csproj.CoreCompileInputs.cache
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\ITSakApp.exe
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\ITSakApp.deps.json
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\ITSakApp.runtimeconfig.json
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\ITSakApp.runtimeconfig.dev.json
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\ITSakApp.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\ITSakApp.pdb
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\DnsClient.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\MongoDB.Bson.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\MongoDB.Driver.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\SharpCompress.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\runtimes\win\native\libzstd.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy32.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy64.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\Repository.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\Repository.pdb
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.csprojAssemblyReference.cache
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.AssemblyInfoInputs.cache
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.AssemblyInfo.cs
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.csproj.CoreCompileInputs.cache
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.csproj.CopyComplete
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.pdb
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.genruntimeconfig.cache
