@@ -126,3 +126,15 @@ D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\bin\Debug\netcoreapp3.1\LibraryIT
 D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\bin\Debug\netcoreapp3.1\LibraryITSak.pdb
 D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\obj\Debug\netcoreapp3.1\Razor\Views\Users\Edit.cshtml.g.cs
 D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\obj\Debug\netcoreapp3.1\Razor\Views\Users\Delete.cshtml.g.cs
+D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
+D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\obj\Debug\netcoreapp3.1\Razor\Views\Backup\Index.cshtml.g.cs
+D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\obj\Debug\netcoreapp3.1\Razor\Views\Backup\Create.cshtml.g.cs
+D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\obj\Debug\netcoreapp3.1\Razor\Views\Backup\Restore.cshtml.g.cs
+D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\obj\Debug\netcoreapp3.1\Razor\Views\Text\Create.cshtml.g.cs
+D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\bin\Debug\netcoreapp3.1\System.Web.Mvc.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakMVC\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll

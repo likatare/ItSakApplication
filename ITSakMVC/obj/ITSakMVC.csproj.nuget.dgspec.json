@@ -10,14 +10,11 @@
         "projectUniqueName": "D:\\Skolarbete\\GitHub\\ItSakApplication\\ITSakMVC\\ITSakMVC.csproj",
         "projectName": "ITSakMVC",
         "projectPath": "D:\\Skolarbete\\GitHub\\ItSakApplication\\ITSakMVC\\ITSakMVC.csproj",
-        "packagesPath": "C:\\Users\\Hultgren\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\toffa\\.nuget\\packages\\",
         "outputPath": "D:\\Skolarbete\\GitHub\\ItSakApplication\\ITSakMVC\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Hultgren\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\toffa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -81,14 +78,11 @@
         "projectUniqueName": "D:\\Skolarbete\\GitHub\\ItSakApplication\\LibraryITSak\\LibraryITSak.csproj",
         "projectName": "LibraryITSak",
         "projectPath": "D:\\Skolarbete\\GitHub\\ItSakApplication\\LibraryITSak\\LibraryITSak.csproj",
-        "packagesPath": "C:\\Users\\Hultgren\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\toffa\\.nuget\\packages\\",
         "outputPath": "D:\\Skolarbete\\GitHub\\ItSakApplication\\LibraryITSak\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Hultgren\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\toffa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -136,7 +130,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -146,14 +140,11 @@
         "projectUniqueName": "D:\\Skolarbete\\GitHub\\ItSakApplication\\Repository\\Repository.csproj",
         "projectName": "Repository",
         "projectPath": "D:\\Skolarbete\\GitHub\\ItSakApplication\\Repository\\Repository.csproj",
-        "packagesPath": "C:\\Users\\Hultgren\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\toffa\\.nuget\\packages\\",
         "outputPath": "D:\\Skolarbete\\GitHub\\ItSakApplication\\Repository\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Hultgren\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\toffa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -177,6 +168,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.11.0, )"
@@ -197,7 +192,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

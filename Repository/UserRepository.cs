@@ -14,7 +14,7 @@ namespace Repository
         {
             User user = new User()
             {
-                UserName = username,
+                Username = username,
                 Password = password,
                 Description = description
 
@@ -55,7 +55,7 @@ namespace Repository
         {
             Database db = new Database();
 
-            return db.UserCollection.Find(u => u.UserName == username && u.Password == password ).ToList<User>().Any();
+            return db.UserCollection.Find(u => u.Username == username && u.Password == password ).ToList<User>().Any();
         }
 
         public static void CreateNote(string id, User user)
@@ -90,7 +90,7 @@ namespace Repository
         {
             Database db = new Database();
 
-            return db.UserCollection.Find(u => u.UserName == username).FirstOrDefault();
+            return db.UserCollection.Find(u => u.Username == username).FirstOrDefault();
         }
 
 

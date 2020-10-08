@@ -102,3 +102,10 @@ D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.
 D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\obj\Debug\netcoreapp3.1\ITSakApp.genruntimeconfig.cache
 D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\LibraryITSak.dll
 D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\LibraryITSak.pdb
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\System.Web.Mvc.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
+D:\Skolarbete\GitHub\ItSakApplication\ITSakApp\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll

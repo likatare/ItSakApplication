@@ -45,9 +45,9 @@ namespace ITSakMVC.Controllers
             {
                 var hashPassword = ITSakLibraryApp.HashPassword(user.Password);
 
-                if (UserRepository.GetUserByUsername(user.UserName) == null)
+                if (UserRepository.GetUserByUsername(user.Username) == null)
                 {
-                    UserRepository.CreateUser(user.UserName,hashPassword,user.Description);
+                    UserRepository.CreateUser(user.Username,hashPassword,user.Description);
                 }
                 else
                 {

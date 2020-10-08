@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -14,8 +15,8 @@ namespace LibraryITSak
     {
 
         private static readonly Random random = new Random();
-        const string BACKUP_FILE_PATH = @"C:\Users\toffa\Documents\It och säkerhet\Backup\";
-        const string KEYS_SAVE_PATH = @"C:\Users\toffa\Documents\It och säkerhet\ITSakAppKeys\";
+        const string BACKUP_FILE_PATH = @"D:\Skolarbete\IT och Säkerhet\Backup\";
+        const string KEYS_SAVE_PATH = @"D:\Skolarbete\IT och Säkerhet\Keys\";
 
         public void Start()
         {
@@ -32,16 +33,16 @@ namespace LibraryITSak
                 switch (selection)
                 {
                     case 1:
-                        CreateUser();
+                        CreateUserInput();
                         break;
                     case 2:
-                        DeleteUser();
+                        DeleteUserInput();
                         break;
                     case 3:
                         EditUser();
                         break;
                     case 4:
-                        TestLogin();
+                        InputTestLogin();
                         break;
                     case 5:
                         CreateNote();
@@ -50,7 +51,7 @@ namespace LibraryITSak
                         ReadFile();
                         break;
                     case 7:
-                        CreateBackup();
+                        InputCreateBackup();
                         break;
                     case 8:
                         RestoreBackup();
@@ -100,37 +101,70 @@ namespace LibraryITSak
 
         }
 
-        private static void CreateUser()
+        private static void CreateUserInput()
         {
             Console.Clear();
             Console.WriteLine("Create a user");
+            User user = new User();
 
             Console.Write("Enter username: ");
-            string username = Console.ReadLine();
+            user.Username = Console.ReadLine();
 
             Console.Write("Enter password: ");
-            string password = Console.ReadLine();
-
-            string passwordHash = HashPassword(password);
+            user.Password = Console.ReadLine();
 
             Console.Write("Enter description: ");
-            string description = Console.ReadLine();
+            user.Description = Console.ReadLine();
 
-            UserRepository.CreateUser(username, passwordHash, description);
+            if (UserRepository.GetUserByUsername(user.Username) == null)
+            {
+                CreateUser(user);
+                Console.WriteLine("User successfully created");
+                Console.ReadLine();
+                Console.Clear();
+            }
+            else
+            {
+                Console.WriteLine("User already exists");
+                Console.ReadLine();
+                Console.Clear();
+                return;
+            }
+
         }
 
-        private static void DeleteUser()
+
+
+        private static void CreateUser(User user)
+        {
+
+            string passwordHash = HashPassword(user.Password);
+
+            UserRepository.CreateUser(user.Username, passwordHash, user.Description);
+        }
+
+
+        private static void DeleteUserInput()
         {
             Console.Clear();
             Console.WriteLine("Delete User");
 
             User userToDelete = SelectUser();
 
-            UserRepository.DeleteUserById(userToDelete.Id);
+            DeleteUser(userToDelete);
 
+            Console.WriteLine("User successfully deleted");
+            Console.ReadLine();
             Console.Clear();
 
         }
+
+        private static void DeleteUser(User userToDelete)
+        {
+            UserRepository.DeleteUserById(userToDelete.Id);
+        }
+
+
 
         private static void EditUser()
         {
@@ -148,22 +182,39 @@ namespace LibraryITSak
         }
 
 
-        private static void TestLogin()
+        private static void InputTestLogin()
         {
             Console.Clear();
             Console.WriteLine("Lets test");
+            User user = new User();
+
+            Console.Write("Enter username: ");
+            user.Username = Console.ReadLine();
+
+            Console.Write("Enter password: ");
+            user.Password = Console.ReadLine();
+
+            TestLogin(user);
+
+        }
+
+
+        private static void TestLogin(User user)
+        {
+            //Console.Clear();
+            //Console.WriteLine("Lets test");
 
 
             while (true)
             {
 
-                Console.Write("Enter username: ");
-                string username = Console.ReadLine();
+                // Console.Write("Enter username: ");
+                //user.Username = Console.ReadLine();
 
-                Console.Write("Enter password: ");
-                string inputPassword = Console.ReadLine();
+                // Console.Write("Enter password: ");
+                //user.Password = Console.ReadLine();
 
-                string hashedPassword = GetUserByUsername(username);
+                string hashedPassword = GetUserByUsername(user.Username);
 
                 if (hashedPassword.Length > 0)
                 {
@@ -171,7 +222,7 @@ namespace LibraryITSak
                     string[] splittedInput = hashedPassword.Split(':');
                     string salt = splittedInput[1];
 
-                    string combinedPasswordSalt = $"{inputPassword}:{salt}";
+                    string combinedPasswordSalt = $"{user.Password}:{salt}";
                     string hashedResult = CreateMd5(combinedPasswordSalt);
 
                     if (hashedResult == splittedInput[0])
@@ -190,6 +241,9 @@ namespace LibraryITSak
                 else
                 {
                     Console.WriteLine("User doesn't exist");
+                    Console.ReadLine();
+                    Console.Clear();
+                    return;
                 }
             }
 
@@ -250,28 +304,50 @@ namespace LibraryITSak
 
         }
 
-        private static void CreateBackup()
+        private static void InputCreateBackup()
+        {
+            Console.Write("Enter name on backup: ");
+            string input = Console.ReadLine();
+
+            CreateBackup(input);
+
+            Console.WriteLine("Backup created");
+            Console.ReadLine();
+            Console.Clear();
+        }
+
+        public static void CreateBackup(string input)
         {
             List<User> users = UserRepository.GetUsers();
             string usersJson = JsonConvert.SerializeObject(users);
 
-            Console.Write("Enter name on backup: ");
-            string input = Console.ReadLine();
+            using StreamWriter file =
+            new StreamWriter($"{BACKUP_FILE_PATH}{input}.json", false);
+            file.Write(usersJson);
 
-            using (StreamWriter file =
-            new StreamWriter($"{BACKUP_FILE_PATH}{input}.json", false))
-            {
-                file.Write(usersJson);
-            }
-
-            Console.WriteLine("Backup created");
         }
 
-        private static void RestoreBackup()
+        public static void RestoreBackup()
         {
             string usersJson = "";
 
             string dir = SelectFile();
+
+            using (var reader = new StreamReader(dir))
+            {
+                usersJson = reader.ReadToEnd();
+            }
+
+            var user = JsonConvert.DeserializeObject<List<User>>(usersJson);
+
+            UserRepository.DeleteAllUsers();
+            UserRepository.SaveManyUsers(user);
+        }
+
+        public static void RestoreBackupMVC(string dir)
+        {
+            string usersJson = "";
+
 
             using (var reader = new StreamReader(dir))
             {
@@ -309,9 +385,7 @@ namespace LibraryITSak
 
         private static void EncryptMessage()
         {
-
             var enc = new Cryptography();
-
 
             string inputText = "";
 
@@ -321,7 +395,6 @@ namespace LibraryITSak
                 string[] splittedFile = file.Split('^');
                 string publicKey = splittedFile[0];
                 inputText = splittedFile[1];
-
 
                 enc.SetKey(publicKey);
             }
@@ -334,7 +407,6 @@ namespace LibraryITSak
         private static void DecryptMessage()
         {
             var enc = new Cryptography();
-
 
             string inputText = "";
 
@@ -356,7 +428,7 @@ namespace LibraryITSak
 
         private static string SelectFile()
         {
-            const string dir = @"C:\Users\toffa\Documents\It och säkerhet\backup";  // your folder here
+            const string dir = BACKUP_FILE_PATH;  // your folder here
             var files = Directory.GetFiles(dir);
 
             Console.WriteLine("Id name - description");
@@ -372,7 +444,15 @@ namespace LibraryITSak
             return files[selectedNumber - 1];
         }
 
-       public static string HashPassword(string password)
+        public static List<string> ListOfFiles()
+        {
+            const string dir = BACKUP_FILE_PATH;
+            var files = Directory.GetFiles(dir);
+
+            return files.ToList();
+        }
+
+        public static string HashPassword(string password)
         {
             string salt = RandomString(25);
             string saltedPassword = $"{password}:{salt}";
@@ -382,10 +462,10 @@ namespace LibraryITSak
             return $"{md5}:{salt}";
         }
 
-        private static string CreateMd5(string input)
+        public static string CreateMd5(string input)
         {
             MD5 mD5 = MD5.Create();
-            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+            byte[] inputBytes = Encoding.ASCII.GetBytes(input);
             byte[] hashBytes = mD5.ComputeHash(inputBytes);
 
             StringBuilder sb = new StringBuilder();
@@ -405,10 +485,8 @@ namespace LibraryITSak
 
 
 
-        private static string GetUserByUsername(string username)
+        public static string GetUserByUsername(string username)
         {
-
-
             User user = UserRepository.GetUserByUsername(username);
 
             string password = "";
@@ -418,8 +496,6 @@ namespace LibraryITSak
                 password = user.Password;
 
             }
-
-
             return password;
         }
 
@@ -431,7 +507,7 @@ namespace LibraryITSak
 
             for (int i = 0; i < users.Count; i++)
             {
-                Console.WriteLine($"{i + 1}:{users[i].UserName} {users[i].Description} ");
+                Console.WriteLine($"{i + 1}:{users[i].Username} {users[i].Description} ");
             }
 
             Console.Write("select a user: ");
